@@ -2,11 +2,14 @@
 
 int main()
 {
-    Image test("pic.png");
+    Image test("flowers.jpg");
 
     Image image = test;
-    image.grayscale_avg_parallel();
-    image.write("gray.png");
-    // test.write("test.jpg");
+    image.grayscale_avg();
+    image.write("flowers_gray.jpg");
+    //  test.write("test.jpg");
     return 0;
 }
+
+// cd "d:\CppProjects\Pixels\" ; g++ -c Image.cpp -o Image.o
+// cd "d:\CppProjects\Pixels\" ; if ($?) { g++ main.cpp Image.o -o main } ; if ($?) { .\main }

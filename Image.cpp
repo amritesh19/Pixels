@@ -117,8 +117,8 @@ Image &Image::grayscale_avg()
             // if (i < 100)
             //     printf("%d ", i);
             //(r+g+b)/3
-            int gray = (data[i] + data[i + 1] + data[i + 2] + data[i + 3]) / 4;
-            memset(data + i, gray, 4);
+            int gray = (data[i] + data[i + 1] + data[i + 2]) / 3;
+            memset(data + i, gray, 3);
         }
 
         auto endTime = std::chrono::high_resolution_clock::now();
@@ -154,7 +154,7 @@ Image &Image::grayscale_avg_parallel()
     else
     {
         std::vector<std::thread> threads;
-        int numThreads = 2;
+        int numThreads = 3;
         int chunkSize = size / numThreads;
 
         auto startTime = std::chrono::high_resolution_clock::now();
